@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Satellite : MonoBehaviour
 {
-    public Transform planet;
-    public float orbitSpeed = 50f;
+    [SerializeField] private Transform _planet;
+    [SerializeField] private float _orbitSpeed = 50f;
 
     void Update()
     {
@@ -14,6 +14,6 @@ public class Satellite : MonoBehaviour
 
     void OrbitPlanet()
     {
-        transform.RotateAround(planet.position, Vector3.forward, orbitSpeed * Time.deltaTime);
+        transform.RotateAround(_planet.position, Vector3.forward, _orbitSpeed * Time.deltaTime);
     }
 }
